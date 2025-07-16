@@ -96,8 +96,7 @@ app.post('/send', async (req, res) => {
 
         res.status(500).json({
             status: 'error',
-            message: 'Failed to send Telegram message',
-            error: error.message || error.toString(),
+            message: 'Failed to send Telegram message'
         });
     }
 });
