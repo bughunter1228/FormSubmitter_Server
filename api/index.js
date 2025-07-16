@@ -79,10 +79,29 @@ const getSavedDataMessage = async (data) =>{
 
 app.post('/send', async (req, res) => {
     const data = req.body;
-    const message = await getSavedDataMessage(data);
-    bot.sendMessage(process.env.GROUP_ID, message);
-    res.json({ status: 'success', message: 'Message sent successfully' });
+
+    try {
+        const message = await getSavedDataMessage(data);
+
+        // Wait for Telegram to respond
+        const telegramResponse = await bot.sendMessage(process.env.GROUP_ID, message);
+
+        res.status(200).json({
+            status: 'success',
+            message: 'Message sent successfully',
+            telegramMessageId: telegramResponse.message_id,
+        });
+    } catch (error) {
+        console.error('Telegram error:', error);
+
+        res.status(500).json({
+            status: 'error',
+            message: 'Failed to send Telegram message',
+            error: error.message || error.toString(),
+        });
+    }
 });
+
 
 app.listen(PORT, () => {
     console.log(`Scraper server running at http://localhost:${PORT}`);
