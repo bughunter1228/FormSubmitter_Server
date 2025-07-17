@@ -25,6 +25,7 @@ const fields = {
     'street_address': 'Street Address',
     'city': 'City',
     'state': 'State',
+    'zip_code': 'Zip Code',
     'email': 'Email',
     'deposit': 'Deposit',
     'gifts': 'Gifts',
