@@ -35,7 +35,7 @@ const fields = {
   notes: "Notes",
 };
 
-const GroupIds = [-4936941796, -4949921695];
+const GroupIds = [-4936941796];
 
 bot.onText(/\/start/, async (msg, match) => {
   try {
