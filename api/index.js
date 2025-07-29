@@ -13,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 const fields = {
+  agent: "Agent Name",
   resort_touring: "Resort Touring",
   tour_date: "Tour Date",
   tour_time: "Tour Time",
@@ -35,7 +36,7 @@ const fields = {
   notes: "Notes",
 };
 
-const GroupIds = [-4949921695];
+const GroupIds = [-4864425856];
 
 bot.onText(/\/start/, async (msg, match) => {
   try {
