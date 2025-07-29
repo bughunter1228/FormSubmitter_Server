@@ -38,6 +38,14 @@ const fields = {
 
 const GroupIds = [-4864425856];
 const TamkiaGroupId = -4786958434;
+const ChrisGroupId = -4830546618;
+const LenoreGroupId = -4696262982;
+const LillyGroupId = -4612332483;
+const ScottGroupId = -4862020380;
+const CharlesGroupId = -4891932983;
+const RobertGroupId = -4947136943;
+const TaniaGroupId = -4891926604;
+
 
 bot.onText(/\/start/, async (msg, match) => {
   try {
@@ -96,6 +104,33 @@ app.post("/send", async (req, res) => {
       targetGroups.push(TamkiaGroupId);
     }
 
+    if (data.agent === "Chris Zepeda") {
+      targetGroups.push(ChrisGroupId);
+    }
+
+    if (data.agent === "Lenore McAndrew") {
+      targetGroups.push(LenoreGroupId);
+    }
+
+    if (data.agent === "Lilly Yacin") {
+      targetGroups.push(LillyGroupId);
+    }
+
+    if (data.agent === "Scott Ritter") {
+      targetGroups.push(ScottGroupId);
+    }
+
+    if (data.agent === "Charles Taylor") {
+      targetGroups.push(CharlesGroupId);
+    }
+
+    if (data.agent === "Robert Enriquez") {
+      targetGroups.push(RobertGroupId);
+    }
+
+    if (data.agent === "Tania Palacios") {
+      targetGroups.push(TaniaGroupId);
+    }
     // Wait for Telegram to respond
     targetGroups.forEach(async (groupId) => {
       await bot.sendMessage(groupId, message);
