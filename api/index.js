@@ -65,10 +65,18 @@ const getSavedDataMessage = async (data) => {
 
   // Print each key-value pair
   entries.forEach(([key, value]) => {
-    if (data[key].length) {
-      message = `${message}\n✅ ${value}: ${data[key]}`;
+    if (key === 'agent') {
+      if (data[key].length) {
+        message = `${message}\n🌟 ${value}: ${data[key]} 🌟`;
+      } else {
+        message = `${message}\n🌟 ${value}:`;
+      }
     } else {
-      message = `${message}\n☑️ ${value}:`;
+      if (data[key].length) {
+        message = `${message}\n✅ ${value}: ${data[key]}`;
+      } else {
+        message = `${message}\n☑️ ${value}:`;
+      }
     }
   });
 
