@@ -37,6 +37,7 @@ const fields = {
 };
 
 const GroupIds = [-4864425856];
+const TamkiaGroupId = -4786958434;
 
 bot.onText(/\/start/, async (msg, match) => {
   try {
@@ -88,9 +89,15 @@ app.post("/send", async (req, res) => {
 
   try {
     const message = await getSavedDataMessage(data);
+    const targetGroups = [...GroupIds];
+
+    // Add Tamkia's group if the agent is Tamkia Ayala
+    if (data.agent === "Tamkia Ayala") {
+      targetGroups.push(TamkiaGroupId);
+    }
 
     // Wait for Telegram to respond
-    GroupIds.forEach(async (groupId) => {
+    targetGroups.forEach(async (groupId) => {
       await bot.sendMessage(groupId, message);
     });
 
