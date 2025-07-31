@@ -133,10 +133,6 @@ app.post("/send", async (req, res) => {
       targetGroups.push(TaniaGroupId);
     }
     
-    if (data.agent === "Darren Wilson") {
-      targetGroups.push(DarrenGroupId);
-    }
-    
     if (data.agent === "Marsha Souma") {
       targetGroups.push(MarshaGroupId);
     }
