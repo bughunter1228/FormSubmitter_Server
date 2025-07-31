@@ -45,7 +45,6 @@ const ScottGroupId = -4862020380;
 const CharlesGroupId = -4891932983;
 const RobertGroupId = -4947136943;
 const TaniaGroupId = -4891926604;
-const DarrenGroupId = -4755739433;
 const MarshaGroupId = -4755739433;
 const RodneyGroupId = -4805379953;
 
