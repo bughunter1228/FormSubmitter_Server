@@ -47,6 +47,11 @@ const RobertGroupId = -4947136943;
 const TaniaGroupId = -4891926604;
 const MarshaGroupId = -4909044283;
 const RodneyGroupId = -4805379953;
+const Book1GroupId = -4854483636;
+const Book2GroupId = -4896798274;
+const Book3GroupId = -4933448873;
+const Book4GroupId = -4928337600;
+const Book5GroupId = -4971064935;
 
 bot.onText(/\/start/, async (msg, match) => {
   try {
@@ -139,6 +144,26 @@ app.post("/send", async (req, res) => {
     
     if (data.agent === "Rodney Arnold") {
       targetGroups.push(RodneyGroupId);
+    }
+
+    if (data.agent === "OPC Booking 1") {
+      targetGroups.push(Book1GroupId);
+    }
+
+    if (data.agent === "OPC Booking 2") {
+      targetGroups.push(Book2GroupId);
+    }
+
+    if (data.agent === "OPC Booking 3") {
+      targetGroups.push(Book3GroupId);
+    }
+
+    if (data.agent === "OPC Booking 4") {
+      targetGroups.push(Book4GroupId);
+    }
+
+    if (data.agent === "OPC Booking 5") {
+      targetGroups.push(Book5GroupId);
     }
     // Wait for Telegram to respond
     targetGroups.forEach(async (groupId) => {
