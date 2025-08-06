@@ -33,6 +33,7 @@ const fields = {
   opc_name: "OPC Name",
   greeter_name: "Greeter Name",
   location_booked: "Location Booked",
+  CVS: "CVS",
   notes: "Notes",
 };
 
